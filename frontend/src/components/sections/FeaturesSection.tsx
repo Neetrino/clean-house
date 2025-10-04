@@ -1,79 +1,50 @@
-'use client'
-
-import { motion } from 'framer-motion'
-
-const features = [
-  {
-    icon: '🚚',
-    title: 'Быстрая доставка',
-    description: 'Доставляем заказы в течение 1-2 дней по всей России'
-  },
-  {
-    icon: '💳',
-    title: 'Безопасная оплата',
-    description: 'Принимаем все виды платежей с защитой данных'
-  },
-  {
-    icon: '🔄',
-    title: 'Легкий возврат',
-    description: 'Возвращаем товар в течение 14 дней без вопросов'
-  },
-  {
-    icon: '⭐',
-    title: 'Высокое качество',
-    description: 'Только проверенные бренды и качественные товары'
-  },
-  {
-    icon: '🎁',
-    title: 'Бонусная программа',
-    description: 'Копите баллы и получайте скидки на покупки'
-  },
-  {
-    icon: '📞',
-    title: 'Поддержка 24/7',
-    description: 'Наша служба поддержки всегда готова помочь'
-  }
-]
-
 export function FeaturesSection() {
-  return (
-    <section className="py-16 bg-white">
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
-            Почему выбирают нас
-          </h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Мы заботимся о каждом клиенте и предлагаем лучший сервис
-          </p>
-        </motion.div>
+  const features = [
+    {
+      icon: '🚚',
+      title: 'Free Shipping',
+      description: 'Free shipping on orders over $50'
+    },
+    {
+      icon: '💎',
+      title: 'Premium Quality',
+      description: 'Only the highest quality products'
+    },
+    {
+      icon: '🔄',
+      title: 'Easy Returns',
+      description: '30-day return policy'
+    },
+    {
+      icon: '🛡️',
+      title: 'Secure Payment',
+      description: 'Safe and secure checkout'
+    }
+  ]
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  return (
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Why Choose Clean House?
+          </h2>
+          <p className="text-lg text-gray-600">
+            We make shopping for home products easy and convenient
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="text-center group"
-            >
-              <div className="w-20 h-20 bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-4xl">{feature.icon}</span>
-              </div>
-              <h3 className="text-xl font-semibold text-neutral-900 mb-3">
+            <div key={index} className="text-center">
+              <div className="text-4xl mb-4">{feature.icon}</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">
                 {feature.title}
               </h3>
-              <p className="text-neutral-600 leading-relaxed">
+              <p className="text-gray-600">
                 {feature.description}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
